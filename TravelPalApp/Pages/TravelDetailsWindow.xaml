@@ -1,0 +1,26 @@
+﻿<Window x:Class="TravelPalApp.TravelDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TravelPalApp"
+        mc:Ignorable="d"
+       Title="TravelDetailsWindow" Height="450" Width="600" Background="MediumSlateBlue">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ListView Name="TravelDetailsLv" Grid.ColumnSpan="3" Margin="15,15,15,15" Grid.RowSpan="2"/>
+        
+        <Button Name="btGoBack" Content="Go Back" FontSize="30" Grid.Row="2" Grid.Column="1" Click="btGoBack_Click" Background="White"/>
+    </Grid>
+</Window>
