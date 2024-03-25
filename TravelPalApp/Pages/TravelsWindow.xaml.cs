@@ -24,5 +24,34 @@ namespace TravelPalApp
             InitializeComponent();
         }
 
+        private void InfoBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSignOut_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AddTravelBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DetailsBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnRemove_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnUser_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }   

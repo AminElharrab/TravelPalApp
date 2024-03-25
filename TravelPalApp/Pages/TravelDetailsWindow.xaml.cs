@@ -24,5 +24,9 @@ namespace TravelPalApp
             InitializeComponent();
         }
 
+        private void btGoBack_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

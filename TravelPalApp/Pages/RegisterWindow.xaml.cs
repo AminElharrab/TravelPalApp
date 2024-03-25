@@ -23,5 +23,15 @@ namespace TravelPalApp
         {
             InitializeComponent();
         }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

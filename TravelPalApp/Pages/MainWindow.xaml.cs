@@ -11,9 +11,6 @@ using System.Windows.Shapes;
 
 namespace TravelPalApp
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -23,7 +20,29 @@ namespace TravelPalApp
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
+            RegisterWindow registerWindow = new RegisterWindow();
+            registerWindow.Show();
+            Close();
+        }
 
+        private void btnSignIn_Click(object sender, RoutedEventArgs e)
+        {
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            bool SignInUser = UserManager.SignInUser(username, password);
+            
+            if (SignInUser)
+            {
+                MessageBox.Show("Login Successful");
+                TravelsWindow travelsWindow = new TravelsWindow();
+                travelsWindow.Show();
+                Close();
+            }
+            else
+            {
+                MessageBox.Show("Invalid Login Credentials");
+            }
         }
     }
 }

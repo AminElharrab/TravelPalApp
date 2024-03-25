@@ -23,5 +23,20 @@ namespace TravelPalApp
         {
             InitializeComponent();
         }
+
+        private void Addbtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Exitbtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TripTypeCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

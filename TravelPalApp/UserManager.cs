@@ -22,14 +22,14 @@ namespace TravelPalApp
 
             if (!ValidateUsername(user.Username))
                 return false;
-                
-                 users.Add(user);
-                 return true;
+
+            users.Add(user);
+            return true;
         }
         public static bool UpdateUsername(IUser user, string NewUsername)
         {
            if (user == null || string.IsNullOrEmpty(NewUsername))
-              return false;
+                return false;
 
             if (!ValidateUsername(user.Username))
                 return false;
