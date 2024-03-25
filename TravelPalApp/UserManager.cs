@@ -11,7 +11,12 @@ namespace TravelPalApp
 {
     public static class UserManager
     {
-        public static List<IUser> users = new List<IUser>();
+        public static List<IUser> users = new List<IUser>()
+        {
+            new Admin("admin", "password", Countries.Albania),
+            new User("user", "password", Countries.Albania)
+        };
+        
         public static IUser SignedInUser { get; private set; }
 
         public static bool AddUser(IUser user)
