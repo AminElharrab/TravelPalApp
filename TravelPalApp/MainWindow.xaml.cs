@@ -28,7 +28,7 @@ namespace TravelPalApp
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
             string username = txtUsername.Text;
-            string password = txtPassword.Text;
+            string password = txtPassword.Password;
 
             bool SignInUser = UserManager.SignInUser(username, password);
             

@@ -41,7 +41,7 @@
         <ComboBox Name="cbNewCountry" Grid.Column="3" Grid.Row="4" Height="25" VerticalContentAlignment="Center" Margin="0 0 30 0"/>
 
 
-        <Button Name="RegisterBtn" Grid.Column="3" Grid.Row="7" Height="30" Width="80" HorizontalAlignment="Center" VerticalAlignment="Bottom" Content="Register" FontFamily="Arial" BorderBrush="MediumSlateBlue" Background="White" Foreground="MediumSlateBlue" Click="btnRegister_Click"/>
+        <Button Name="RegisterBtn" Grid.Column="3" Grid.Row="7" Height="30" Width="80" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Register" FontFamily="Arial" BorderBrush="MediumSlateBlue" Background="White" Foreground="MediumSlateBlue" Click="btnRegister_Click" Margin="0,16,0,0" Grid.RowSpan="2"/>
         <Button Name="CloseBtn" Grid.Column="2" Grid.Row="8" Height="30" Width="80" HorizontalAlignment="Center" VerticalAlignment="Bottom" Content="Close" FontFamily="Arial" BorderBrush="MediumSlateBlue" Background="White" Foreground="MediumSlateBlue" Click="btnClose_Click"/>
 
     </Grid>
