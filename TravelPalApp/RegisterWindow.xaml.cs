@@ -83,11 +83,12 @@ namespace TravelPalApp
                     MainWindow mainWindow = new MainWindow();
                     mainWindow.Show();
                     Close();
-                }
+                } 
                 else
                 {
-                    MessageBox.Show("Choose another username");
+                    MessageBox.Show("Choose another Username");
                 }
+
             }
         }
                  private void btnClose_Click(object sender, RoutedEventArgs e)

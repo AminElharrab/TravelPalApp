@@ -43,9 +43,19 @@ namespace TravelPalApp
             return true;
         }
         private static bool ValidateUsername(string username)
+        {
+            bool isAvailable = true;
+            
+            foreach (var user in users)
             {
-                return !string.IsNullOrEmpty(username);
+                if (user.Username == username)
+                {
+                    isAvailable = false; 
+                    break;
+                }
             }
+            return isAvailable;        
+        }
         public static void RemoveUser(IUser user)
         {
             if (user == null)
