@@ -10,16 +10,21 @@ namespace TravelPalApp
 {
     public static class TravelManager
     {
-        public static List<Travel> Travels { get; set; } = new();
+        public static List<Travel> Travels { get; set; } = [];
 
-        public static void TravelRemove(Travel travel)
-        {
-            Travels.Remove(travel);
-        }
         public static void TravelAdd(Travel travel)
         {
             Travels.Add(travel);
         }
+
+        public static void TravelRemove(Travel travel)
+        {
+            if (UserManager.SignedInUser is User signedInUser)
+            {
+                signedInUser.Travels.Remove(travel);
+            }
+        }
+
     }
 }
  

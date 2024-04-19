@@ -7,20 +7,11 @@ using System.Threading.Tasks;
 
 namespace TravelPalApp
 {
-    public class User : IUser
+    public class User(string username, string password, Countries location) : IUser
     {
-        public List<Travel> travels { get; set; } = new();
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public Countries Location { get; set; }
-
-
-        public User(string username, string password, Countries location)
-        {
-            Username = username;
-            Password = password;
-            Location = location;
-        }
-
+        public List<Travel> Travels { get; set; } = [];
+        public string Username { get; set; } = username;
+        public string Password { get; set; } = password;
+        public Countries Location { get; set; } = location;
     }
 }

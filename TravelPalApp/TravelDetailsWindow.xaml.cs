@@ -19,14 +19,17 @@ namespace TravelPalApp
     /// </summary>
     public partial class TravelDetailsWindow : Window
     {
-        public TravelDetailsWindow()
+        public TravelDetailsWindow(Travel selectedTravel)
         {
             InitializeComponent();
+            TravelDetailslv.Text= selectedTravel.GetInfo();
         }
 
         private void btGoBack_Click(object sender, RoutedEventArgs e)
         {
-
+            TravelsWindow travelsWindow = new TravelsWindow();
+            travelsWindow.Show();
+            Close();
         }
     }
 }

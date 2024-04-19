@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:TravelPalApp"
         mc:Ignorable="d"
         Title="AddTravelWindow" Height="450" Width="800" Background="MediumSlateBlue">
-    
+
     <Grid>
-         <Grid.RowDefinitions>
+        <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -30,12 +30,15 @@
         <Label Name="HdnMeetingLbl" Grid.Row="5" Grid.Column="1" Content="Meeting details" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="White" Foreground="MediumSlateBlue" BorderBrush="White" Visibility="Hidden"/>
 
 
-        <TextBox Name="TravellersTxt" Grid.Row="4" Height="40" Width="200" FontSize="20" Foreground="White" HorizontalAlignment="Right" Background="White"/>
-        <TextBox Name="CityTxt" Grid.Row="2" Height="40" Width="200" FontSize="20" Foreground="White" HorizontalAlignment="Right" Background="White"/>
-        <TextBox Name="HdnMeetingTextbox" Grid.Row="7" Grid.Column="1" Height="30" Width="240" FontSize="20" Foreground="MediumSlateBlue" HorizontalAlignment="Right" Background="Transparent" Margin="10 0" Visibility="Hidden"/>
+        <TextBox Name="TravellersTxt" Grid.Row="4" Height="40" Width="200" FontSize="20" Foreground="Black" HorizontalAlignment="Right" Background="White"/>
+        <TextBox Name="CityTxt" Grid.Row="2" Height="40" Width="200" FontSize="20" Foreground="Black" HorizontalAlignment="Right"  Background="White"/>
+        <TextBox Name="HdnMeetingTextbox" Grid.Row="7" Grid.Column="1" Height="30" Width="240" FontSize="20" Foreground="AntiqueWhite" HorizontalAlignment="Right" Background="Transparent" Margin="10 0" Visibility="Hidden"/>
 
         <ComboBox Name="CountryCB" Grid.Row="3" Height="35" Width="200" HorizontalAlignment="Right" VerticalAlignment="Center" Background="White"/>
-        <ComboBox Name="TripTypeCB" Grid.Row="5" Height="35" Width="200" HorizontalAlignment="Right" VerticalAlignment="Center" Background="White" SelectionChanged="TripTypeCB_SelectionChanged"/>
+        <ComboBox Name="TripTypeCB" Grid.Row="5" Height="35" Width="200" HorizontalAlignment="Right" VerticalAlignment="Center" Background="White" SelectionChanged="TripTypeCB_SelectionChanged">
+            <ComboBoxItem Content="Work Trip" />
+            <ComboBoxItem Content="Vacation" />
+        </ComboBox>
 
         <CheckBox Name="hdnAllinclusive" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin=" 20 0" Content="All inclusive" Foreground="White" FontSize="15" Visibility="Hidden"/>
 

@@ -19,7 +19,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <ListView Name="TravelDetailsLv" Grid.ColumnSpan="3" Margin="15,15,15,15" Grid.RowSpan="2"/>
+        <TextBlock Name="TravelDetailslv" Grid.ColumnSpan="3" Margin="15,15,15,15" Grid.RowSpan="2" Background="BlanchedAlmond" Foreground="Black"/>
         
         <Button Name="btGoBack" Content="Go Back" FontSize="30" Grid.Row="2" Grid.Column="1" Click="btGoBack_Click" Background="White"/>
     </Grid>

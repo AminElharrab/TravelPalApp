@@ -20,15 +20,13 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label  x:Name="UserLbl" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="3" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="40"/>
-        
-        <Button x:Name="btnUser" Grid.Column="1" Grid.Row="3" Content="User" Margin="20" Click="btnUser_Click"/>
-        <Button x:Name="btnRemove" Grid.Column="3" Grid.Row="3" Content="Remove" Margin="20" Click="btnRemove_Click"/>
-        <Button x:Name="DetailsBtn" Grid.Column="2" Grid.Row="3" Content="Details" Margin="20" Click="DetailsBtn_Click"/>
-        <Button x:Name="AddTravelBtn" Grid.Column="5" Grid.Row="3" Content="Add travel" Margin="20" Click="AddTravelBtn_Click"/>
-        <Button x:Name="btnSignOut" Grid.Column="0" Grid.Row="3" Content="Sign out" Margin="20" Click="btnSignOut_Click"/>
-        <Button x:Name="InfoBtn" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="1" Content="Info" Margin="30" Click="InfoBtn_Click" />
-        
-        <ListView x:Name="ListViewTravel" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="15"/>
+        <Label Name="UserLbl" Grid.Column="3" VerticalContentAlignment="Center" HorizontalAlignment="Center" FontSize="20" Foreground = "BlanchedAlmond" Margin="102,24,0,23" Width="198" Grid.ColumnSpan="2"/>
+        <Button Name="btnRemove" Grid.Column="3" Grid.Row="3" Content="Remove" Margin="20" Click="btnRemove_Click"/>
+        <Button Name="DetailsBtn" Grid.Column="2" Grid.Row="3" Content="Details" Margin="20" Click="DetailsBtn_Click"/>
+        <Button Name="AddTravelBtn" Grid.Column="5" Grid.Row="3" Content="Add travel" Margin="20" Click="AddTravelBtn_Click"/>
+        <Button Name="btnSignOut" Grid.Column="0" Grid.Row="3" Content="Sign out" Margin="20" Click="btnSignOut_Click"/>
+        <Button Name="InfoBtn" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="1" Content="Info" Margin="30" Click="InfoBtn_Click" />
+
+        <ListView Name="ListViewTravel" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" Grid.RowSpan="3" Margin="15"/>
     </Grid>
 </Window>

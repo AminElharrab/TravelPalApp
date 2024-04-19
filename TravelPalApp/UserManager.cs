@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
@@ -15,9 +16,30 @@ namespace TravelPalApp
         {
             new Admin("admin", "password", Countries.Albania),
             new User("user", "password", Countries.Albania)
-        };
-        
-        public static IUser SignedInUser { get; private set; }
+            {
+                Travels = new List<Travel>()
+                {
+                new WorkTrip ("Tirana", Countries.Albania, 2, "lorem ipsum")
+                {
+                    Destination = "Tirana",
+                    Country = Countries.Albania,
+                    Travellers = 2,
+                    MeetingDetails = "Lorem ipsum",
+                },                
+                new Vacation("Tirana", Countries.Albania, 2, allinclusive)
+                {
+                    Destination="Tirana",
+                    Country = Countries.Albania,
+                    Travellers = 2,
+                    AllInclusive = true
+                }
+                
+            }
+        }
+    };
+        private static bool allinclusive;
+
+        public static IUser? SignedInUser { get; private set; }
 
         public static bool AddUser(IUser user)
         {
@@ -69,11 +91,17 @@ namespace TravelPalApp
             foreach (IUser user in users)
             {
                 if (user.Username == username && user.Password == password)
+
                 {
+                    SignedInUser = user;
                     return true;
                 }
             }
             return false;
+        }
+        public static void SignOutUser()
+        {
+            SignedInUser = null;
         }
 
     }
