@@ -12,19 +12,24 @@ namespace TravelPalApp
     {
         public static List<Travel> Travels { get; set; } = [];
 
-        public static void TravelAdd(Travel travel)
+        public static List<Travel> GetAllUserTravels()
         {
-            Travels.Add(travel);
-        }
+            //Skapar lista av alla användares resor
+            List<Travel> allUserTravels = [];
 
-        public static void TravelRemove(Travel travel)
-        {
-            if (UserManager.SignedInUser is User signedInUser)
+            foreach (var user in UserManager.users)
             {
-                signedInUser.Travels.Remove(travel);
-            }
-        }
+                if (user is User)
+                {
+                    User u = (User)user;
 
+                    // Lägger till alla resor från användaren i allUserTravels
+                    allUserTravels.AddRange(u.Travels);
+                }
+            }
+
+            return allUserTravels;
+        }
     }
 }
  

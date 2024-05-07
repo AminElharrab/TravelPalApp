@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace TravelPalApp
 {
-    /// <summary>
-    /// Interaction logic for TravelDetailsWindow.xaml
-    /// </summary>
     public partial class TravelDetailsWindow : Window
     {
         public TravelDetailsWindow(Travel selectedTravel)

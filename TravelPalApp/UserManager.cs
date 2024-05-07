@@ -12,6 +12,7 @@ namespace TravelPalApp
 {
     public static class UserManager
     {
+        // Lista för att lagra users
         public static List<IUser> users = new List<IUser>()
         {
             new Admin("admin", "password", Countries.Albania),
@@ -19,13 +20,15 @@ namespace TravelPalApp
             {
                 Travels = new List<Travel>()
                 {
+                // Exempel på Worktrip
                 new WorkTrip ("Tirana", Countries.Albania, 2, "lorem ipsum")
                 {
                     Destination = "Tirana",
                     Country = Countries.Albania,
                     Travellers = 2,
                     MeetingDetails = "Lorem ipsum",
-                },                
+                },
+                // Exempel på Vacation
                 new Vacation("Tirana", Countries.Albania, 2, allinclusive)
                 {
                     Destination="Tirana",
@@ -33,7 +36,7 @@ namespace TravelPalApp
                     Travellers = 2,
                     AllInclusive = true
                 }
-                
+
             }
         }
     };
@@ -43,47 +46,32 @@ namespace TravelPalApp
 
         public static bool AddUser(IUser user)
         {
-            if (user == null || string.IsNullOrEmpty(user.Username) || string.IsNullOrEmpty(user.Password)) 
+            // Checkar null eller tomt fält för username och password
+            if (user == null || string.IsNullOrEmpty(user.Username) || string.IsNullOrEmpty(user.Password))
                 return false;
 
-
+            // Kontrollerar om det finns dubbletter av användarnamn
             if (!ValidateUsername(user.Username))
                 return false;
-
+            // Lägger till användare
             users.Add(user);
             return true;
         }
-        public static bool UpdateUsername(IUser user, string NewUsername)
-        {
-           if (user == null || string.IsNullOrEmpty(NewUsername))
-                return false;
 
-            if (!ValidateUsername(user.Username))
-                return false;
-
-            user.Username = NewUsername;
-            return true;
-        }
         private static bool ValidateUsername(string username)
+        // Kontrollerar om username är tillgängligt
         {
             bool isAvailable = true;
-            
+
             foreach (var user in users)
             {
                 if (user.Username == username)
                 {
-                    isAvailable = false; 
+                    isAvailable = false;
                     break;
                 }
             }
-            return isAvailable;        
-        }
-        public static void RemoveUser(IUser user)
-        {
-            if (user == null)
-                return;
-
-            users.Remove(user);
+            return isAvailable;
         }
         public static bool SignInUser(string username, string password)
         {

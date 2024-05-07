@@ -21,6 +21,7 @@ namespace TravelPalApp
         {
             InitializeComponent();
 
+            // Fyller combobox med länder
             foreach (Countries country in Enum.GetValues(typeof(Countries)))
             {
                 CountryCB.Items.Add(country);
@@ -34,6 +35,7 @@ namespace TravelPalApp
             Countries? country = CountryCB.SelectedItem as Countries?;
             int travellers;
 
+            // Validerar antalet resenärer och att fältet inte är tomt
             if (!int.TryParse(TravellersTxt.Text, out travellers) || travellers <= 0)
             {
                 MessageBox.Show("Please enter a valid number of travelers.", "Warning!");
@@ -42,7 +44,8 @@ namespace TravelPalApp
 
             string? trip = (TripTypeCB.SelectedItem as ComboBoxItem)?.Content as string;
             User? signedInUser = UserManager.SignedInUser as User;
-
+  
+            // Kontrollerar så de andra inmatningsfälten är ifyllda
             if (string.IsNullOrEmpty(destination) || country == null || string.IsNullOrEmpty(trip))
             {
                 MessageBox.Show("Please fill in all the required fields.", "Warning!");
@@ -57,36 +60,27 @@ namespace TravelPalApp
                         MessageBox.Show("Please provide meeting details for the work trip.", "Warning!");
                         return;
                     }
-
+                   
+                    // Lägger till work trip i users travel
                     WorkTrip workTrip = new WorkTrip(destination, country.Value, travellers, meetingDetails);
                     if (signedInUser != null)
                     {
                         signedInUser.Travels.Add(workTrip);
                     }
-                    else
-                    {
-                        MessageBox.Show("Did not pass");
-                    }
+                    
+               
                 }
                 else if (trip == "Vacation")
                 {
                     bool? allInclusive = hdnAllinclusive.IsChecked;
-
-                    if (allInclusive == null)
-                    {
-                        MessageBox.Show("Please specify if the vacation is all-inclusive.", "Warning!");
-                        return;
-                    }
-
+                   
+                    // Lägger till vacation i users travel
                     Vacation vacation = new Vacation(destination, country.Value, travellers, allInclusive.Value);
                     if (signedInUser != null)
                     {
                         signedInUser.Travels.Add(vacation);
                     }
-                    else
-                    {
-                        MessageBox.Show("Did not pass");
-                    }
+                   
                 }
 
                 TravelsWindow travelsWindow = new TravelsWindow();
@@ -108,12 +102,14 @@ namespace TravelPalApp
 
             if (selectedContent == "Work Trip")
             {
+                // Visibility om Worktrip väljs i combobox
                 HdnMeetingLbl.Visibility = Visibility.Visible;
                 HdnMeetingTextbox.Visibility = Visibility.Visible;
                 hdnAllinclusive.Visibility = Visibility.Hidden;
             }
             else if (selectedContent == "Vacation")
             {
+                // Visibility om Vacation väljs i combobox
                 hdnAllinclusive.Visibility = Visibility.Visible;
                 HdnMeetingTextbox.Visibility = Visibility.Hidden;
                 HdnMeetingLbl.Visibility = Visibility.Hidden;

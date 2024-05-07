@@ -22,12 +22,6 @@ namespace TravelPalApp
         {
             InitializeComponent();
 
-            //string[] Countries = Enum.GetNames(typeof(Countries));
-            //foreach (string country in Countries)
-            //{
-            //    cbNewCountry.Items.Add(country);
-            //}
-
             foreach (var country in Enum.GetValues(typeof(Countries)))
             {
                 cbNewCountry.Items.Add(country);
@@ -56,10 +50,11 @@ namespace TravelPalApp
 
 
             string confirmpassword = txtConfirmPassword.Password;
-
+            
+            // Kontrollerar så inga fält lämnas tomma
             if (string.IsNullOrWhiteSpace(username))
             {
-                MessageBox.Show("Fill out Username", "Warning!");
+               MessageBox.Show("Fill out Username", "Warning!");
             }
             else if (string.IsNullOrWhiteSpace(password))
             {
@@ -71,10 +66,12 @@ namespace TravelPalApp
             }
             else if (password != confirmpassword)
             {
+                // Om lösenordet inte stämmer i confirmpassword
                 MessageBox.Show("Passwords do not match");
             }
             else
             {
+                // Lägger till user i UserManager
                 IUser user = new User (username, password, country);
                 bool addedUser = UserManager.AddUser(user);
                 if (addedUser)
@@ -85,6 +82,7 @@ namespace TravelPalApp
                     Close();
                 } 
                 else
+                // Om användarnamet är upptaget
                 {
                     MessageBox.Show("Choose another Username");
                 }
